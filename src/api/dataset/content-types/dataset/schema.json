@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "datasets",
+  "info": {
+    "singularName": "dataset",
+    "pluralName": "datasets",
+    "displayName": "Dataset"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "judul_kegiatan": {
+      "type": "string",
+      "required": true
+    },
+    "tahun_kegiatan": {
+      "type": "integer",
+      "required": true
+    },
+    "cara_pengumpulan_data": {
+      "type": "string",
+      "required": true
+    },
+    "sektor_kegiatan": {
+      "type": "string",
+      "required": true
+    },
+    "jenis_kegiatan_statistik": {
+      "type": "string",
+      "required": true
+    },
+    "identitas_rekomendasi": {
+      "type": "string",
+      "required": true
+    },
+    "instansi_penyelenggara": {
+      "type": "string",
+      "required": true
+    },
+    "alamat_lengkap_instansi_penyelenggara": {
+      "type": "string",
+      "required": true
+    },
+    "unit_eselon_penanggungjawab": {
+      "type": "string",
+      "required": true
+    },
+    "penanggungjawab_teknis": {
+      "type": "string",
+      "required": true
+    },
+    "pdf": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "csv": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
