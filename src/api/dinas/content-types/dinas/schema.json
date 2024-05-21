@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "daftar_dinas",
+  "info": {
+    "singularName": "dinas",
+    "pluralName": "daftar-dinas",
+    "displayName": "Dinas",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama": {
+      "type": "string",
+      "required": true
+    },
+    "bidangs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bidang.bidang",
+      "mappedBy": "dinas"
+    }
+  }
+}

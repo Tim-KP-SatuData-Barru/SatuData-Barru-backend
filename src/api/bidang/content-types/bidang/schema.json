@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "daftar_bidang",
+  "info": {
+    "singularName": "bidang",
+    "pluralName": "daftar-bidang",
+    "displayName": "Bidang",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama_bidang": {
+      "type": "string",
+      "required": true
+    },
+    "data_bidangs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::data-bidang.data-bidang",
+      "mappedBy": "bidang"
+    },
+    "dinas": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::dinas.dinas",
+      "inversedBy": "bidangs"
+    }
+  }
+}

@@ -362,48 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiDatasetDataset extends Schema.CollectionType {
-  collectionName: 'datasets';
-  info: {
-    singularName: 'dataset';
-    pluralName: 'datasets';
-    displayName: 'Dataset';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    judul_kegiatan: Attribute.String & Attribute.Required;
-    tahun_kegiatan: Attribute.Integer & Attribute.Required;
-    cara_pengumpulan_data: Attribute.String & Attribute.Required;
-    sektor_kegiatan: Attribute.String & Attribute.Required;
-    jenis_kegiatan_statistik: Attribute.String & Attribute.Required;
-    identitas_rekomendasi: Attribute.String & Attribute.Required;
-    instansi_penyelenggara: Attribute.String & Attribute.Required;
-    alamat_lengkap_instansi_penyelenggara: Attribute.String &
-      Attribute.Required;
-    unit_eselon_penanggungjawab: Attribute.String & Attribute.Required;
-    penanggungjawab_teknis: Attribute.String & Attribute.Required;
-    pdf: Attribute.Media & Attribute.Required;
-    csv: Attribute.Media & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::dataset.dataset',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::dataset.dataset',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -830,6 +788,161 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiBidangBidang extends Schema.CollectionType {
+  collectionName: 'daftar_bidang';
+  info: {
+    singularName: 'bidang';
+    pluralName: 'daftar-bidang';
+    displayName: 'Bidang';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nama_bidang: Attribute.String & Attribute.Required;
+    data_bidangs: Attribute.Relation<
+      'api::bidang.bidang',
+      'oneToMany',
+      'api::data-bidang.data-bidang'
+    >;
+    dinas: Attribute.Relation<
+      'api::bidang.bidang',
+      'manyToOne',
+      'api::dinas.dinas'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bidang.bidang',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bidang.bidang',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDataBidangDataBidang extends Schema.CollectionType {
+  collectionName: 'daftar_data_bidang';
+  info: {
+    singularName: 'data-bidang';
+    pluralName: 'daftar-data-bidang';
+    displayName: 'Data_bidang';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    elemen: Attribute.String & Attribute.Required;
+    bidang: Attribute.Relation<
+      'api::data-bidang.data-bidang',
+      'manyToOne',
+      'api::bidang.bidang'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::data-bidang.data-bidang',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::data-bidang.data-bidang',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDatasetDataset extends Schema.CollectionType {
+  collectionName: 'datasets';
+  info: {
+    singularName: 'dataset';
+    pluralName: 'datasets';
+    displayName: 'Dataset';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    judul_kegiatan: Attribute.String & Attribute.Required;
+    tahun_kegiatan: Attribute.Integer & Attribute.Required;
+    cara_pengumpulan_data: Attribute.String & Attribute.Required;
+    sektor_kegiatan: Attribute.String & Attribute.Required;
+    jenis_kegiatan_statistik: Attribute.String & Attribute.Required;
+    identitas_rekomendasi: Attribute.String & Attribute.Required;
+    instansi_penyelenggara: Attribute.String & Attribute.Required;
+    alamat_lengkap_instansi_penyelenggara: Attribute.String &
+      Attribute.Required;
+    unit_eselon_penanggungjawab: Attribute.String & Attribute.Required;
+    penanggungjawab_teknis: Attribute.String & Attribute.Required;
+    pdf: Attribute.Media & Attribute.Required;
+    csv: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dataset.dataset',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dataset.dataset',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDinasDinas extends Schema.CollectionType {
+  collectionName: 'daftar_dinas';
+  info: {
+    singularName: 'dinas';
+    pluralName: 'daftar-dinas';
+    displayName: 'Dinas';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nama: Attribute.String & Attribute.Required;
+    bidangs: Attribute.Relation<
+      'api::dinas.dinas',
+      'oneToMany',
+      'api::bidang.bidang'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::dinas.dinas',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::dinas.dinas',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -840,7 +953,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::dataset.dataset': ApiDatasetDataset;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -849,6 +961,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::bidang.bidang': ApiBidangBidang;
+      'api::data-bidang.data-bidang': ApiDataBidangDataBidang;
+      'api::dataset.dataset': ApiDatasetDataset;
+      'api::dinas.dinas': ApiDinasDinas;
     }
   }
 }

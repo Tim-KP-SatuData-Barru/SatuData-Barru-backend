@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "daftar_data_bidang",
+  "info": {
+    "singularName": "data-bidang",
+    "pluralName": "daftar-data-bidang",
+    "displayName": "Data_bidang",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "elemen": {
+      "type": "string",
+      "required": true
+    },
+    "bidang": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::bidang.bidang",
+      "inversedBy": "data_bidangs"
+    }
+  }
+}
