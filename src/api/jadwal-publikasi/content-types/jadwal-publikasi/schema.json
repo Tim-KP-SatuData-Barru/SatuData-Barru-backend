@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "daftar_jadwal_publikasi",
+  "info": {
+    "singularName": "jadwal-publikasi",
+    "pluralName": "daftar-jadwal-publikasi",
+    "displayName": "Jadwal Publikasi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "judul": {
+      "type": "string",
+      "required": true
+    },
+    "periode_terbit": {
+      "type": "enumeration",
+      "enum": [
+        "Tahunan",
+        "Bulanan",
+        "Mingguan",
+        "Harian"
+      ],
+      "required": true
+    },
+    "bahasa": {
+      "type": "string"
+    },
+    "jadwal_rilis": {
+      "required": true,
+      "type": "date"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Belum Rilis",
+        "Sudah Rilis"
+      ],
+      "required": true
+    }
+  }
+}
