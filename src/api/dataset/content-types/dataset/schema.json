@@ -4,7 +4,8 @@
   "info": {
     "singularName": "dataset",
     "pluralName": "datasets",
-    "displayName": "Dataset"
+    "displayName": "Dataset",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,7 +17,7 @@
       "required": true
     },
     "tahun_kegiatan": {
-      "type": "integer",
+      "type": "biginteger",
       "required": true
     },
     "cara_pengumpulan_data": {
@@ -40,32 +41,32 @@
       "required": true
     },
     "alamat_lengkap_instansi_penyelenggara": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "unit_eselon_penanggungjawab": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "penanggungjawab_teknis": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "pdf": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
     },
     "csv": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }
