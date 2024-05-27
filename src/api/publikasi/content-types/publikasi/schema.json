@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publikasis",
+  "info": {
+    "singularName": "publikasi",
+    "pluralName": "daftar-publikasi",
+    "displayName": "Publikasi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "judul": {
+      "type": "string",
+      "required": true
+    },
+    "nomor_katalog": {
+      "type": "string",
+      "required": true
+    },
+    "nomor_publikasi": {
+      "type": "string",
+      "required": true
+    },
+    "ISSN_ISBN": {
+      "type": "string",
+      "required": true
+    },
+    "tanggal_rilis": {
+      "type": "date",
+      "required": true
+    },
+    "deskripsi": {
+      "type": "text",
+      "required": true
+    },
+    "pdf": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

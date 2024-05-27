@@ -6,6 +6,8 @@
     "pluralName": "datasets",
     "displayName": "Dataset",
     "description": ""
+    "displayName": "Dataset",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -56,8 +58,12 @@
       "type": "media",
       "multiple": false,
       "required": true,
+      "required": true,
       "allowedTypes": [
         "files"
+      ]
+    },
+    "csv": {
       ]
     },
     "csv": {

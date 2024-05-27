@@ -872,6 +872,7 @@ export interface ApiDatasetDataset extends Schema.CollectionType {
     pluralName: 'datasets';
     displayName: 'Dataset';
     description: '';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -889,6 +890,7 @@ export interface ApiDatasetDataset extends Schema.CollectionType {
     penanggungjawab_teknis: Attribute.Text & Attribute.Required;
     pdf: Attribute.Media & Attribute.Required;
     csv: Attribute.Media & Attribute.Required;
+    tahun_kegiatan: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -943,6 +945,81 @@ export interface ApiDinasDinas extends Schema.CollectionType {
   };
 }
 
+export interface ApiJadwalPublikasiJadwalPublikasi
+  extends Schema.CollectionType {
+  collectionName: 'daftar_jadwal_publikasi';
+  info: {
+    singularName: 'jadwal-publikasi';
+    pluralName: 'daftar-jadwal-publikasi';
+    displayName: 'Jadwal Publikasi';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    judul: Attribute.String & Attribute.Required;
+    periode_terbit: Attribute.Enumeration<
+      ['Tahunan', 'Bulanan', 'Mingguan', 'Harian']
+    > &
+      Attribute.Required;
+    bahasa: Attribute.String;
+    jadwal_rilis: Attribute.Date & Attribute.Required;
+    status: Attribute.Enumeration<['Belum Rilis', 'Sudah Rilis']> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::jadwal-publikasi.jadwal-publikasi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::jadwal-publikasi.jadwal-publikasi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPublikasiPublikasi extends Schema.CollectionType {
+  collectionName: 'publikasis';
+  info: {
+    singularName: 'publikasi';
+    pluralName: 'daftar-publikasi';
+    displayName: 'Publikasi';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    judul: Attribute.String & Attribute.Required;
+    nomor_katalog: Attribute.String & Attribute.Required;
+    nomor_publikasi: Attribute.String & Attribute.Required;
+    ISSN_ISBN: Attribute.String & Attribute.Required;
+    tanggal_rilis: Attribute.Date & Attribute.Required;
+    deskripsi: Attribute.Text & Attribute.Required;
+    pdf: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::publikasi.publikasi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::publikasi.publikasi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -965,6 +1042,8 @@ declare module '@strapi/types' {
       'api::data-bidang.data-bidang': ApiDataBidangDataBidang;
       'api::dataset.dataset': ApiDatasetDataset;
       'api::dinas.dinas': ApiDinasDinas;
+      'api::jadwal-publikasi.jadwal-publikasi': ApiJadwalPublikasiJadwalPublikasi;
+      'api::publikasi.publikasi': ApiPublikasiPublikasi;
     }
   }
 }
