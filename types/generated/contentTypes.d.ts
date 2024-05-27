@@ -871,13 +871,13 @@ export interface ApiDatasetDataset extends Schema.CollectionType {
     singularName: 'dataset';
     pluralName: 'datasets';
     displayName: 'Dataset';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     judul_kegiatan: Attribute.String & Attribute.Required;
-    tahun_kegiatan: Attribute.Integer & Attribute.Required;
     cara_pengumpulan_data: Attribute.String & Attribute.Required;
     sektor_kegiatan: Attribute.String & Attribute.Required;
     jenis_kegiatan_statistik: Attribute.String & Attribute.Required;
@@ -889,6 +889,7 @@ export interface ApiDatasetDataset extends Schema.CollectionType {
     penanggungjawab_teknis: Attribute.String & Attribute.Required;
     pdf: Attribute.Media & Attribute.Required;
     csv: Attribute.Media & Attribute.Required;
+    tahun_kegiatan: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "dataset",
     "pluralName": "datasets",
-    "displayName": "Dataset"
+    "displayName": "Dataset",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,10 +14,6 @@
   "attributes": {
     "judul_kegiatan": {
       "type": "string",
-      "required": true
-    },
-    "tahun_kegiatan": {
-      "type": "integer",
       "required": true
     },
     "cara_pengumpulan_data": {
@@ -52,19 +49,23 @@
       "required": true
     },
     "pdf": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
     },
     "csv": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "tahun_kegiatan": {
+      "type": "string",
       "required": true
     }
   }
