@@ -847,6 +847,11 @@ export interface ApiDataBidangDataBidang extends Schema.CollectionType {
       'manyToOne',
       'api::bidang.bidang'
     >;
+    year_2021: Attribute.String & Attribute.Required;
+    year_2022: Attribute.String & Attribute.Required;
+    year_2023: Attribute.String & Attribute.Required;
+    year_2024: Attribute.String & Attribute.Required;
+    satuan: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -872,7 +877,6 @@ export interface ApiDatasetDataset extends Schema.CollectionType {
     pluralName: 'datasets';
     displayName: 'Dataset';
     description: '';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -890,7 +894,6 @@ export interface ApiDatasetDataset extends Schema.CollectionType {
     penanggungjawab_teknis: Attribute.Text & Attribute.Required;
     pdf: Attribute.Media & Attribute.Required;
     csv: Attribute.Media & Attribute.Required;
-    tahun_kegiatan: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -990,6 +993,7 @@ export interface ApiPublikasiPublikasi extends Schema.CollectionType {
     singularName: 'publikasi';
     pluralName: 'daftar-publikasi';
     displayName: 'Publikasi';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1002,6 +1006,7 @@ export interface ApiPublikasiPublikasi extends Schema.CollectionType {
     tanggal_rilis: Attribute.Date & Attribute.Required;
     deskripsi: Attribute.Text & Attribute.Required;
     pdf: Attribute.Media & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

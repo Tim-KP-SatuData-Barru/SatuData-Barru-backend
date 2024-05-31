@@ -4,7 +4,8 @@
   "info": {
     "singularName": "publikasi",
     "pluralName": "daftar-publikasi",
-    "displayName": "Publikasi"
+    "displayName": "Publikasi",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -36,10 +37,23 @@
       "required": true
     },
     "pdf": {
-      "allowedTypes": ["images", "files", "videos", "audios"],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

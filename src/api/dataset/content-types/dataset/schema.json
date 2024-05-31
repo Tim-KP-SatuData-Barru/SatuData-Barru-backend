@@ -5,7 +5,7 @@
     "singularName": "dataset",
     "pluralName": "datasets",
     "displayName": "Dataset",
-    "description": ""
+    "description": "",
     "displayName": "Dataset",
     "description": ""
   },
@@ -61,9 +61,6 @@
       "required": true,
       "allowedTypes": [
         "files"
-      ]
-    },
-    "csv": {
       ]
     },
     "csv": {
