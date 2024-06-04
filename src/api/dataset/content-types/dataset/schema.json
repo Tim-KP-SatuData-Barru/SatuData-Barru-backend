@@ -5,6 +5,8 @@
     "singularName": "dataset",
     "pluralName": "datasets",
     "displayName": "Dataset",
+    "description": "",
+    "displayName": "Dataset",
     "description": ""
   },
   "options": {
@@ -14,6 +16,10 @@
   "attributes": {
     "judul_kegiatan": {
       "type": "string",
+      "required": true
+    },
+    "tahun_kegiatan": {
+      "type": "biginteger",
       "required": true
     },
     "cara_pengumpulan_data": {
@@ -37,20 +43,21 @@
       "required": true
     },
     "alamat_lengkap_instansi_penyelenggara": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "unit_eselon_penanggungjawab": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "penanggungjawab_teknis": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "pdf": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "required": true,
       "allowedTypes": [
         "files"
@@ -63,10 +70,6 @@
       "allowedTypes": [
         "files"
       ]
-    },
-    "tahun_kegiatan": {
-      "type": "string",
-      "required": true
     }
   }
 }
