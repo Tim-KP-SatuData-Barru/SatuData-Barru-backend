@@ -989,6 +989,7 @@ export interface ApiPublikasiPublikasi extends Schema.CollectionType {
     singularName: 'publikasi';
     pluralName: 'daftar-publikasi';
     displayName: 'Publikasi';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1001,6 +1002,7 @@ export interface ApiPublikasiPublikasi extends Schema.CollectionType {
     tanggal_rilis: Attribute.Date & Attribute.Required;
     deskripsi: Attribute.Text & Attribute.Required;
     pdf: Attribute.Media & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
